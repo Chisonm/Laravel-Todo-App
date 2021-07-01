@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\TodosController;
+use App\Models\Todo;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [TodosController::class,'index']);
+Route::get('/completed-todo', [TodosController::class,'completed_todo'])->name('completed-todo');
+Route::get('/completed-todo/{id}', [TodosController::class,'complete_a_todo'])->name('complete-todo');
+
+Route::resource('todo', TodosController::class);
