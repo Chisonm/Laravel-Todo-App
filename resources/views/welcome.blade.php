@@ -4,7 +4,7 @@
     {{-- message includes --}}
       @include('app.message')
         <div class="flex flex-col items-center justify-center mt-12 mb-9">
-            @foreach ($todos as $todo)
+            @forelse ($todos as $todo)
                 <div class="flex justify-between w-full p-6 mx-auto mt-5 bg-white rounded-lg shadow-md ">
                     <div class="items-center md:mr-3">
                         <p>{{ $todo->title }}</p>
@@ -70,7 +70,9 @@
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @empty
+                <p class="text-lg font-semibold text-purple-900">No Completed Todo Yet <box-icon name='sad' color='red' size='xs'></box-icon></p>
+            @endforelse
         </div>
         {{ $todos->links() }}
     </div>
