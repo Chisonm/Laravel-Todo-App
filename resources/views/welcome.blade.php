@@ -7,14 +7,13 @@
             @forelse ($todos as $todo)
                 <div class="flex justify-between w-full p-6 mx-auto mt-5 bg-white rounded-lg shadow-md ">
                     <div class="items-center md:mr-3">
-                        <p>{{ $todo->title }}</p>
-                        <p>{{ Illuminate\Support\Str::limit($todo->content, 25) }}</p>
+                        <p class="text-sm">{{ $todo->title }}</p>
+                        <p class="text-xs">{{ Illuminate\Support\Str::limit($todo->content, 25) }}</p>
                     </div>
-                    <div class="items-center mt-3 ml-3">
-                        <a href="{{ route('todo.show',$todo->id) }}" class="px-2 py-1 font-bold text-center text-white bg-blue-500 rounded-md hover:bg-blue-400"><i class='bx bx-subdirectory-right'></i></a> 
-                        <a href="{{ route('complete-todo',$todo->id) }}" class="px-2 py-1 font-bold text-center text-white bg-green-500 rounded-md hover:bg-green-400 lg:ml-2"><i class='bx bx-chevron-down-square'></i></a>
-                        <a href="javascript:;" role="button" data-toggle="modal" data-target="#exampleModalTwo-{{ $todo->id }}" class="px-2 py-1 font-bold text-white bg-red-500 rounded-md hover:bg-red-400 text-cente lg:ml-2"><i class='bx bx-trash'></i></a>
-                       
+                    <div class="items-center inline-block mt-3 ml-1">
+                        <a href="{{ route('todo.show',$todo->id) }}" class="inline-block px-2 font-bold text-center text-white bg-blue-500 rounded-md sm:px-1 sm:py-1 md:px-1 hover:bg-blue-400"><i class='bx bx-subdirectory-right bx-xs'></i></a> 
+                        <a href="{{ route('complete-todo',$todo->id) }}" class="inline-block px-2 font-bold text-center text-white bg-green-500 rounded-md hover:bg-green-400"><i class='bx bx-chevron-down-square bx-xs'></i></a>
+                        <a href="javascript:;" role="button" data-toggle="modal" data-target="#exampleModalTwo-{{ $todo->id }}" class="inline-block px-2 font-bold text-white bg-red-500 rounded-md hover:bg-red-400 text-cente"><i class='bx bx-trash bx-xs'></i></a>
                     </div>
                 </div>
                 {{-- modal --}}
