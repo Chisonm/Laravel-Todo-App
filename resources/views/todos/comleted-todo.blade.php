@@ -14,7 +14,7 @@
                     </div>
                 </div>
             @empty
-                <p class="text-lg font-semibold text-purple-900">No Completed Todo Yet <box-icon name='sad' color='red' size='xs'></box-icon></p>
+                <p class="text-lg font-semibold text-purple-900">No Todo Yet <box-icon name='sad' color='red' size='xs'></box-icon></p>
             @endforelse
         </div>
         {{ $todos->links() }}
