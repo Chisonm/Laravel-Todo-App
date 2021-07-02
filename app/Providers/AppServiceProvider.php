@@ -25,5 +25,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-    }
+
+        view()->composer('*',function($view){
+            $view->with([
+                'web_assets' => url('/').env('RESOURCE_URL'),
+            ]);
+        });
+
+     }
 }
+
+
