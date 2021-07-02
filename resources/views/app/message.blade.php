@@ -1,6 +1,6 @@
 {{-- deleted message --}}
 @if(session()->has('deleted'))
-<div class="relative px-4 py-4 mb-4 text-white bg-red-300 border-0 rounded">
+<div class="relative px-4 py-4 mb-4 text-white bg-red-500 border-0 rounded">
 <span class="inline-block mr-5 text-xl align-middle">
 <i class="fas fa-bell"></i>
 </span>

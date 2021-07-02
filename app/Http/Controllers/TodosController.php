@@ -85,7 +85,8 @@ class TodosController extends Controller
         $todo = Todo::findOrFail($id);
         $todo->title = $request->title;
         $todo->content = $request->content;
-
+        $todo->status = 1;
+        
         $todo->update();
         return redirect('/')->with('updated','todo updated successfully');
     }
